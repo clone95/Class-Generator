@@ -17,10 +17,10 @@ def class_builder(class_name, class_methods, basic_attributes):
     for el in range(0, len(class_methods)):                     # methods
         file.write("\n    def %s(self):" % class_methods[el])
         file.write("\n        return True\n\n")
-    for el in range(0, len(basic_attributes)):
+    for el in range(0, len(basic_attributes)):                              # default get methods for each attribute
         file.write("    def get_%s(self):\n" % basic_attributes[el])
         file.write("        return self.%s\n" % basic_attributes[el])
-    for el in range(0, len(basic_attributes)):
+    for el in range(0, len(basic_attributes)):                                      # default set methods ..
         file.write("\n    def set_%s(self, new_value):\n" % basic_attributes[el])
         file.write("        self.%s = new_value" % basic_attributes[el])
 
