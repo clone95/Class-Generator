@@ -1,30 +1,3 @@
-# Class-Generator
-A class skeleton generator with textual interface.
-
-Usage:
-
-From this usage
-```
-Insert method name (end to terminate):
->> method_1
-Insert method name (end to terminate):
->> method_2
-Insert method name (end to terminate):
->> method_3
-Insert method name (end to terminate):
->> end
-Insert attribute name (end to terminate):
->> attrib_1
-Insert attribute name (end to terminate):
->> attrib_2
-Insert attribute name (end to terminate):
->> attrib_3
-Insert attribute name (end to terminate):
->> end
-```
-
-It creates a new Python file 
-```
 # class class_1 automatic-generated  
 
 
@@ -59,4 +32,3 @@ def class_1():
         self.attrib_2 = new_value
     def set_attrib_3(self, new_value):
         self.attrib_3 = new_value
-        ```

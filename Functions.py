@@ -11,12 +11,18 @@ def class_builder(class_name, class_methods, basic_attributes):
         ris = ris + ", " + basic_attributes[el]
     ris1 = ris[2:]              # clear from first ','
     file.write("    def __init__ (self, %s):\n" % ris1)
-    for el in range(0, len(basic_attributes)):
+    for el in range(0, len(basic_attributes)):              # constructor
         print(len(basic_attributes))
         file.write("        self." + basic_attributes[el] + " = " + basic_attributes[el] + "\n")
-    for el in range(0, len(class_methods)):
-        file.write("\n\n    def %s():" % class_methods[el])
-        file.write("\n        return True")
+    for el in range(0, len(class_methods)):                     # methods
+        file.write("\n    def %s(self):" % class_methods[el])
+        file.write("\n        return True\n\n")
+    for el in range(0, len(basic_attributes)):
+        file.write("    def get_%s(self):\n" % basic_attributes[el])
+        file.write("        return self.%s\n" % basic_attributes[el])
+    for el in range(0, len(basic_attributes)):
+        file.write("\n    def set_%s(self, new_value):\n" % basic_attributes[el])
+        file.write("        self.%s = new_value" % basic_attributes[el])
 
 
 def main():
@@ -32,7 +38,6 @@ def main():
             end = False
         else:
             methods.append(method)
-            print(methods)
     end = True
     while end:
         attribute = input("Insert attribute name (end to terminate):\n")
